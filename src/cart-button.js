@@ -3,12 +3,16 @@ import { connect } from 'react-redux';
 
 let mapStateToProps = state => ({ cartItems: state.cartItems });
 
-let CartButton = (props) =>
-    <button
+let CartButton = (props) => {
+    let button = props.cartItems.includes(props.product)
+        ? {type: 'REMOVE_FROM_CART', text: 'Remove from Cart'}
+        : {type: 'ADD_TO_CART', text: 'Add to Cart'}
+    return <button
         onClick={() => {
-            props.dispatch({ type: 'ADD_TO_CART', product: props.product })
+            props.dispatch({ type: button.type, product: props.product })
         }}
-    >Add to Cart</button>
+    >{button.text}</button>
+};
 
 let ConnectedCartButton = connect(mapStateToProps)(CartButton);
 

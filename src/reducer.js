@@ -7,6 +7,13 @@ let addToCart = (oldState, action) => {
 };
 
 let removeFromCart = (oldState, action) => {
+    let newCart = oldState.cartItems.filter(cartItem => 
+        cartItem.id !== action.product.id
+        );
+    return {
+        ...oldState,
+        cartItems: newCart
+    }
 };
 
 let reducers = {
