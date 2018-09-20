@@ -1,4 +1,5 @@
 import React from 'react';
+import CartButton from './cart-button';
 import { connect } from 'react-redux';
 
 let ProductDetail = (props) => 
@@ -10,11 +11,7 @@ let ProductDetail = (props) =>
         <p>{ props.product.title }</p>
         <p>{ props.product.description }</p>
         <p>{ props.product.price }</p>
-        <button
-            onClick={() => {
-                props.dispatch({ type: 'ADD_TO_CART', product: props.product })
-            }}
-        >Add to Cart</button>
+        <CartButton product={props.product}/>
     </div>
 
 let ConnectedProductDetail = connect()(ProductDetail);
