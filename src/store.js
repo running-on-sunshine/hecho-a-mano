@@ -1,11 +1,9 @@
 import { createStore } from 'redux';
 import reducer from './reducer';
-import products from './products';
-import categories from './categories';
 
 let initialState = {
-    products: products,
-    categories: categories,
+    products: [],
+    categories: [],
     cartItems: []
 };
 
