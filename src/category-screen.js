@@ -8,12 +8,12 @@ let mapStateToProps = state => ({ categories: state.categories, products: state.
 
 let CategoryScreen = (props) => {
     let urlId = props.match.params.id;
-    let category = props.categories.filter(category => category.id === urlId);
-    let products = props.products.filter(product => product.categoryId === category[0].id);
+    let category = props.categories.find(category => category.id === urlId);
+    let products = props.products.filter(product => product.categoryId === category.id);
     return <div>
         <NavBar />
         <Sidebar />
-        <h1>{category[0].title}</h1>
+        <h1>{category.title}</h1>
         <ProductList products={products} />
     </div>
 };
