@@ -21,12 +21,20 @@ let loadProducts = (oldState, action) => {
         ...oldState,
         products : action.products
     }
-}
+};
+
+let loadCategories = (oldState, action) => {
+    return {
+        ...oldState,
+        categories: action.categories
+    }
+};
 
 let reducers = {
     'ADD_TO_CART': addToCart,
     'REMOVE_FROM_CART': removeFromCart,
-    'LOAD_PRODUCTS': loadProducts
+    'LOAD_PRODUCTS': loadProducts,
+    'LOAD_CATEGORIES': loadCategories
 };
 
 let reducer = (oldState, action) => {
