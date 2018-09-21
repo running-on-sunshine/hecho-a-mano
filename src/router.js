@@ -11,10 +11,10 @@ let Router = () =>
         <div>
             <Switch>
                 <Route exact path="/" component={AllProductsScreen} />
-                <Route exact path="/products/:id" 
+                <Route exact path="/product/:id" 
                     render={(props) => <ProductDetailScreen {...props} /> }
                 />
-                <Route exact path="/categories/:id" 
+                <Route exact path="/category/:id" 
                     render={(props) => <CategoryScreen {...props} /> }
                 />
                 <Route path="/cart" component={CartScreen} />
