@@ -32,4 +32,4 @@ let Sidebar = (props) =>
 
 export default connect(
     state => ({ categories: state.categories })
-)(FetchCategories);
+    )(FetchCategories);
